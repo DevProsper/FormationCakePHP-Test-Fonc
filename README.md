@@ -31,6 +31,7 @@ configuration relevant for your application.
 ## Layout
 The app skeleton uses a subset of [Foundation](http://foundation.zurb.com/) CSS framework by default. You can, however, replace it with any other library or custom styles.
 
+### CELL
 
 Supposons que nous travaillions sur une application qui permette aux utilisateurs d’envoyer des messages aux autres.
 Nous avons un model Messages, et nous voulons montrer le nombre de messages non lus sans avoir à polluer
@@ -52,4 +53,29 @@ class InboxCell extends Cell
 Vous avez <?= $unread_count ?> messages non lus.
 </div>
 
+//Charger des cell
 $cell = $this->cell('Inbox');
+
+une fois que la celle est chargée, elle va exécuté la methode dispaly.
+On peut executer d'autre methodes en itulisant
+$cell = $this->cell->('Inbox::expanded');
+
+//Pour activer le cell dans le controller
+
+public function Dashboard extends AppController{
+    use CellTrait;
+}
+
+
+Afficher un Template alternatif
+
+Par convention, les cells affichent les templates qui correspondent à l’action qu’ils exécutent. Si vous avez besoin
+d’afficher un template de vue différent, vous pouvez spécifier le template à utiliser lors de l’affichage de la cell :
+
+// Appel de render() explicitement
+
+echo $this->cell('Inbox::recent', ['-3 days'])->render('messages');
+// Définit le template avant de faire un echo de la cell.
+$cell = $this->cell('Inbox'); ?>
+$cell->template = 'messages';
+echo $cell;

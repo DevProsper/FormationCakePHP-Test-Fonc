@@ -1,5 +1,5 @@
 <?php
 foreach ($posts as $post) {
-    unset($post->generated_html);
+    unset($article->generated_html);
 }
 json_encode(compact('posts'));

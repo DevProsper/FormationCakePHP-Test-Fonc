@@ -10,9 +10,15 @@ use App\Controller\AppController;
  */
 class PostsController extends AppController
 {
+  public function initialize()
+{
+parent::initialize();
+$this->loadComponent('RequestHandler');
+}
     public function index(){
         $posts = $this->Posts->find('all');
         $this->set(compact('posts'));
+        $this->set('_serialize', ['posts']);
     }
 
     public function view($id = null){
