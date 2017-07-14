@@ -11,13 +11,13 @@ class UsersController extends AppController
     //use CellTrait;
     public function initialize(){
       parent::initialize();
-      //$this->Auth->allow(['add', 'index']);
-      //$this->layout = 'admin';
+      $this->loadComponent('RequestHandler');
     }
 
     public function index(){
         $users = $this->Users->find('all');
         $this->set(compact('users'));
+        $this->set('_serialize', ['users']);
     }
 
     public function view($id = null){
