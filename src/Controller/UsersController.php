@@ -8,6 +8,7 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+    //use CellTrait;
     public function initialize(){
       parent::initialize();
       //$this->Auth->allow(['add', 'index']);
