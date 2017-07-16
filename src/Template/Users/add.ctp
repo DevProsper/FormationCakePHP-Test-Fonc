@@ -7,5 +7,28 @@
 <?= $this->Form->control('published', ['type' => 'checkbox']) ?>
 <?php $size = ['s' => 'Small', 'm' => 'Medium', 'L' => 'Large']; ?>
 <?= $this->Form->select('size' , $size, ['default' => 'm']) ?>
+<!-- Value attribu l'element par defaut du champ close_time  -->
+Value attribu l'element par defaut du champ close_time
+<?= $this->Form->datetime('close_time', ['value' => '12:54:30']) ?>
+<!-- Form d'un tableau de valeurs par defaut, on deifini true a multiple -->
+Form d'un tableau de valeurs par defaut, on deifini true a multiple
+<?= $this->Form->select('rooms', [
+    'multiple' => true,
+    'default'  => [1, 3]
+  ]); ?>
+<!-- empty est comme valeur par du champ -->
+empty est comme valeur par du champ(Choisissez)
+<?= $this->Form->select(
+    'field',
+    ['1','2','3','4','5'],
+    ['empty' => 'Choisissez']
+  ) ?>
+<?= $this->Form->checkbox('published', ['value' => 'Y', 'hiddenField' => 'N']) ?>
+<?= $this->Form->control('time', [
+    'type' => 'time',
+    'interval' => 15
+  ]) ?>
+<?= $this->Form->hidden('id') ?>
+Créer des Textareas
 <?= $this->Form->button('Ajouter') ?>
 <?= $this->Form->end() ?>
