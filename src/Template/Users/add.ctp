@@ -88,5 +88,52 @@ Creation des Input type file
 // echo $this->Form->create($document, ['type' => 'file']);
    echo $this->Form->file('submittedFile');
 ?>
+
+Création des Input type Datetime
+
+<?php echo $this->Form->dateTime('released', [
+'year' => [
+'class' => 'year-classname',
+],
+'month' => [
+'class' => 'month-class',
+'data-type' => 'month',
+],
+]); ?>
+
+Creation des Inputs type Time
+<?php echo $this->Form->time('released', [
+'interval' => 15,
+'hour' => [
+'class' => 'foo-class',
+],
+'minute' => [
+'class' => 'bar-class',
+],
+]); ?>
+
+
+Input Year
+<?php echo $this->Form->year('purchased', [
+'minYear' => 2000,
+'maxYear' => date('Y')
+]); ?>
+
+Input month
+<?php echo $this->Form->month('mob');
+ ?>
+ Input month en chiffre
+ <?php echo $this->Form->month('mob', ['monthNames' => false]); ?>
+
+ Inupt type day
+ <?php echo $this->Form->day('created'); ?>
+
+ Input hour
+ <?php echo $this->Form->hour('created', [
+'format' => 12
+]);
+echo $this->Form->hour('created', [
+'format' => 24
+]); ?>
 <?= $this->Form->button('Ajouter') ?>
 <?= $this->Form->end() ?>
