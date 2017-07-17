@@ -37,5 +37,40 @@ Créer des bouton radio
     ['value' => 'u', 'text' => 'Blue', 'style' => 'color:blue;'],
     ['value' => 'g', 'text' => 'Green', 'style' => 'color:green;']
   ]) ?>
+Création des Pickers
+<?php
+$options = ['M' => 'Male', 'F' => 'Femme'];
+echo $this->Form->select('gender', $options, ['empty' => true]);
+
+$option = [
+  'Group 1' => [
+     'value' => 'France',
+     'value' => 'France',
+     'value' => 'Allemagne'
+  ],
+  'Group 2' => [
+      'value' => 'Congo B',
+      'value' => 'Condo D'
+  ]
+];
+echo $this->Form->select('field', $option);
+ ?>
+
+<?php $options = [
+[ 'text' => 'Description 1', 'value' => 'value 1', 'attr_name' => 'attr_value 1'],
+[ 'text' => 'Description 2', 'value' => 'value 2', 'attr_name' => 'attr_value 2'],
+[ 'text' => 'Description 3', 'value' => 'value 3', 'other_attr_name' => 'other_attr_value' ],
+];
+echo $this->Form->select('field', $options); ?>
+
+
+multiple checkbox
+<?php $options = [
+'Value 1' => 'Label 1',
+'Value 2' => 'Label 2'
+];
+echo $this->Form->select('field', $options, [
+'multiple' => 'checkbox'
+]); ?>
 <?= $this->Form->button('Ajouter') ?>
 <?= $this->Form->end() ?>
