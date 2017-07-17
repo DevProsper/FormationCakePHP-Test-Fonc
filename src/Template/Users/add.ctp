@@ -72,5 +72,21 @@ multiple checkbox
 echo $this->Form->select('field', $options, [
 'multiple' => 'checkbox'
 ]); ?>
+
+checkbox desable
+<?php $options = [
+'Value 1' => 'Label 1',
+'Value 2' => 'Label 2'
+];
+echo $this->Form->select('field', $options, [
+'multiple' => 'checkbox',
+'disabled' => ['Value 1']
+]); ?>
+
+Creation des Input type file
+<?php
+// echo $this->Form->create($document, ['type' => 'file']);
+   echo $this->Form->file('submittedFile');
+?>
 <?= $this->Form->button('Ajouter') ?>
 <?= $this->Form->end() ?>
