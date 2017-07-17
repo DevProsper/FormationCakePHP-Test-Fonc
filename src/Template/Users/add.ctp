@@ -30,5 +30,12 @@ empty est comme valeur par du champ(Choisissez)
   ]) ?>
 <?= $this->Form->hidden('id') ?>
 Créer des Textareas
+<?= $this->Form->checkbox('done') ?>
+Créer des bouton radio
+<?= $this->Form->radio('favorite_color',[
+    ['value' => 'r', 'text' => 'Red', 'style' => 'color:red;'],
+    ['value' => 'u', 'text' => 'Blue', 'style' => 'color:blue;'],
+    ['value' => 'g', 'text' => 'Green', 'style' => 'color:green;']
+  ]) ?>
 <?= $this->Form->button('Ajouter') ?>
 <?= $this->Form->end() ?>
